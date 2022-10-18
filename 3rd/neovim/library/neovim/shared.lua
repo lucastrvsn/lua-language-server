@@ -253,3 +253,27 @@ function vim.endswith(s, suffix) end
 ---
 ---@param opt Neovim.Validate.Options Names of parameters to validate. Each key is a parameter name.
 function vim.validate(opt) end
+
+---
+---Returns true if object `f` can be called as a function.
+---
+---@param f any Any object
+---@return boolean is_callable `true` if `f` is callable, else `false`
+function vim.is_callable(f) end
+
+---
+---Creates a table whose members are automatically created when accessed, if they don't already
+---exist.
+---They mimic defaultdict in python.
+---
+---If {create} is `nil`, this will create a defaulttable whose constructor function is
+---this function, effectively allowing to create nested tables on the fly:
+---
+---<pre>
+---local a = vim.defaulttable()
+---a.b.c = 1
+---</pre>
+---
+---@param create? function The function called to create a missing value.
+---@return table table Empty table with metamethod
+function vim.defaulttable(create) end
